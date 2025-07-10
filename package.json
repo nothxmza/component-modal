@@ -1,8 +1,12 @@
 {
-  "name": "modal-component",
-  "private": true,
-  "version": "0.0.0",
+  "name": "modal-component-openclass-p14",
+  "version": "1.0.1",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

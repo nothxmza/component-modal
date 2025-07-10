@@ -1,12 +1,55 @@
-# React + Vite
+# react-modal-component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un composant Modal simple et personnalisable pour React.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install modal-component-openclass-p14
+```
 
-## Expanding the ESLint configuration
+## Utilisation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```jsx
+import { useState } from "react";
+import { Modal } from "react-modal-component";
+
+export const Exemple = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <Modal
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        style={{ width: '400px', height: '300px' }}
+      >
+        <p>test modal</p>
+      </Modal>
+      <button onClick={() => setIsOpen(true)}>Open modal</button>
+    </>
+  );
+};
+```
+
+## Props
+
+| Nom      | Type       | Description                                      |
+|----------|------------|--------------------------------------------------|
+| open     | `boolean`  | Affiche ou masque la modal                       |
+| onClose  | `function` | Fonction appelée lors de la fermeture            |
+| style    | `object`   | Styles CSS appliqués à la fenêtre de la modal    |
+| children | `node`     | Contenu à afficher dans la modal                 |
+
+## Personnalisation
+
+Tu peux passer n’importe quel style via la prop `style` pour ajuster la taille ou l’apparence de la modal.
+
+
+---
+
+**N’oublie pas d’importer le CSS fourni (`index.css`) pour le style de base de la modal :**
+
+```js
+import  "modal-component-openclass-p14/dist/index.css";
+```
