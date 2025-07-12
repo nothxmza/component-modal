@@ -12,7 +12,8 @@ npm install modal-component-openclass-p14
 
 ```jsx
 import { useState } from "react";
-import { Modal } from "react-modal-component";
+import { Modal } from "modal-component-openclass-p14"
+import "modal-component-openclass-p14/dist/index.css";
 
 export const Exemple = () => {
   const [isOpen, setIsOpen] = useState(false);
